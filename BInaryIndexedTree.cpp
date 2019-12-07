@@ -2,7 +2,7 @@
 // array is assumed to be 1-indexed
 // int may be changed to long long if required
 
-int fenwick[100005],n;
+int fenwick[MAXN],n;
 
 void update(int idx,int val){
 	while(idx <= n){
