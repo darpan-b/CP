@@ -1,4 +1,4 @@
-// implementation of BIT (also called Fenwick tree)
+// implementation of BIT (also called Fenwick tree) to find sum of a given range
 // array is assumed to be 1-indexed
 // fenwick[] is 1-indexed
 // int may be changed to long long if required
