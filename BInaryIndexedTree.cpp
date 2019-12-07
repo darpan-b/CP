@@ -1,5 +1,6 @@
 // implementation of BIT (also called Fenwick tree)
 // array is assumed to be 1-indexed
+// fenwick[] is 1-indexed
 // int may be changed to long long if required
 
 int fenwick[MAXN],n;
