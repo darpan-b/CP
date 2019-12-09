@@ -1,3 +1,5 @@
+// class for Fast IO in java
+
 class InputReader{
     private BufferedReader br;
     private StringTokenizer zer;
@@ -22,13 +24,13 @@ class InputReader{
 		}catch(IOException e){
 			throw new RuntimeException(e);
 		}
-	}
+    }
 
     public int ni(){
         return Integer.parseInt(n());
     }
     
-    public long nl(){
+    	public long nl(){
 		return Long.parseLong(n());
 	}
 	
