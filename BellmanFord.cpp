@@ -4,6 +4,15 @@
 
 ll dist[MAXN];
 
+void check_neg_cycle(vector<pair<ll,pair<int,int>>> edges){
+	for(auto edge: edges){
+		if(dist[edge.second.second] > dist[edge.second.first]+edge.first){
+			cout << "Negative cycle detected!";
+			return;
+		} 
+	}
+}
+
 void bellman_ford(int src,int n, vector<pair<ll,pair<int,int>>> edges){
 	for(int i = 0; i < n; i++) dist[i] = INF;
 	dist[src] = 0;
@@ -17,4 +26,5 @@ void bellman_ford(int src,int n, vector<pair<ll,pair<int,int>>> edges){
 			}
 		}
 	}
+	check_neg_cycle(edges);
 }
