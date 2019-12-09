@@ -1,0 +1,54 @@
+// The following are some of the methods of the BigInteger class in java
+// They have been copied from: https://www.geeksforgeeks.org/biginteger-class-in-java/
+// It is saved as a .java file for syntax highlighting purpose only
+
+    BigInteger abs(): This method returns a BigInteger whose value is the absolute value of this BigInteger.
+    BigInteger add(BigInteger val): This method returns a BigInteger whose value is (this + val).
+    BigInteger and(BigInteger val): This method returns a BigInteger whose value is (this & val).
+    BigInteger andNot(BigInteger val): This method returns a BigInteger whose value is (this & ~val).
+    int bitCount(): This method returns the number of bits in the two’s complement representation of this BigInteger that differ from its sign bit.
+    int bitLength(): This method returns the number of bits in the minimal two’s-complement representation of this BigInteger, excluding a sign bit.
+    byte byteValueExact(): This method converts this BigInteger to a byte, checking for lost information.
+    BigInteger clearBit(int n): This method returns a BigInteger whose value is equivalent to this BigInteger with the designated bit cleared.
+    int compareTo(BigInteger val): This method compares this BigInteger with the specified BigInteger.
+    BigInteger divide(BigInteger val): This method returns a BigInteger whose value is (this / val).
+    BigInteger[] divideAndRemainder(BigInteger val): This method returns an array of two BigIntegers containing (this / val) followed by (this % val).
+    double doubleValue(): This method converts this BigInteger to a double.
+    boolean equals(Object x): This method compares this BigInteger with the specified Object for equality.
+    BigInteger flipBit(int n): This method returns a BigInteger whose value is equivalent to this BigInteger with the designated bit flipped.
+    float floatValue(): This method converts this BigInteger to a float.
+    BigInteger gcd(BigInteger val): This method returns a BigInteger whose value is the greatest common divisor of abs(this) and abs(val).
+    int getLowestSetBit(): This method returns the index of the rightmost (lowest-order) one bit in this BigInteger (the number of zero bits to the right of the rightmost one bit).
+    int hashCode(): This method returns the hash code for this BigInteger.
+    int intValue(): This method converts this BigInteger to an int.
+    int intValueExact(): This method converts this BigInteger to an int, checking for lost information.
+    boolean isProbablePrime(int certainty): This method returns true if this BigInteger is probably prime, false if it’s definitely composite.
+    long longValue(): This method converts this BigInteger to a long.
+    long longValueExact(): This method converts this BigInteger to a long, checking for lost information.
+    BigInteger max(BigInteger val): This method returns the maximum of this BigInteger and val.
+    BigInteger min(BigInteger val): This method returns the minimum of this BigInteger and val.
+    BigInteger mod(BigInteger m): This method returns a BigInteger whose value is (this mod m).
+    BigInteger modInverse(BigInteger m): This method returns a BigInteger whose value is (this-1 mod m).
+    BigInteger modPow(BigInteger exponent, BigInteger m): This method returns a BigInteger whose value is (thisexponent mod m).
+    BigInteger multiply(BigInteger val): This method returns a BigInteger whose value is (this * val).
+    BigInteger negate(): This method returns a BigInteger whose value is (-this).
+    BigInteger nextProbablePrime(): This method returns the first integer greater than this BigInteger that is probably prime.
+    BigInteger not(): This method returns a BigInteger whose value is (~this).
+    BigInteger or(BigInteger val): This method returns a BigInteger whose value is (this | val).
+    BigInteger pow(int exponent): This method returns a BigInteger whose value is (thisexponent).
+    static BigInteger probablePrime(int bitLength, Random rnd): This method returns a positive BigInteger that is probably prime, with the specified bitLength.
+    BigInteger remainder(BigInteger val): This method returns a BigInteger whose value is (this % val).
+    BigInteger setBit(int n): This method returns a BigInteger whose value is equivalent to this BigInteger with the designated bit set.
+    BigInteger shiftLeft(int n): This method returns a BigInteger whose value is (this << n).
+    BigInteger shiftRight(int n): This method returns a BigInteger whose value is (this >> n).
+    short shortValueExact(): This method converts this BigInteger to a short, checking for lost information.
+    int signum(): This method returns the signum function of this BigInteger.
+    BigInteger sqrt(): This method returns the integer square root of this BigInteger.
+    BigInteger[] sqrtAndRemainder(): This method returns an array of two BigIntegers containing the integer square root s of this and its remainder this – s*s, respectively.
+    BigInteger subtract(BigInteger val): This method returns a BigInteger whose value is (this – val).
+    boolean testBit(int n): This method returns true if and only if the designated bit is set.
+    byte[] toByteArray(): This method returns a byte array containing the two’s-complement representation of this BigInteger.
+    String toString(): This method returns the decimal String representation of this BigInteger.
+    String toString(int radix): This method returns the String representation of this BigInteger in the given radix.
+    static BigInteger valueOf(long val): This method returns a BigInteger whose value is equal to that of the specified long.
+    BigInteger xor(BigInteger val): This method returns a BigInteger whose value is (this ^ val).
