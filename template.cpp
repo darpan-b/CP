@@ -10,26 +10,23 @@ using namespace __gnu_pbds;
 #define ll long long 
 #define ld long double
 // Pairs
-#define pii pair<int,int> 
-#define pll pair<ll,ll>
-#define pil pair<int,ll>
-#define pli pair<ll,int> 
+#define pi pair<int,int> 
+#define pl pair<ll,ll>
+#define pd pair<ld,ld>
 // Vectors
 #define vi vector<int> 
 #define vl vector<ll>
-#define vpii vector<pii>
-#define vpll vector<pll>
-#define vpil vector<pil>
-#define vpli vector<pli>
+#define vpi vector<pi>
+#define vpl vector<pl>
+#define vpd vector<pd>
 #define vd vector<ld>
 #define vvi vector<vi>
-#define vvl vector<vl>
 // For loops
-#define FOR0(i,n) for(auto (i) = 0; (i) < (n); (i)++)
-#define FOR1(i,n) for(auto (i) = 1; (i) <= (n); (i)++)
-#define FOR(i,a,b) for(auto (i) = (a); (i) <= (b); (i)++)
-#define DFOR(i,a,b) for(auto (i) = (a); (i) >= (b); (i)--)
-#define TRAV(i,x) for(auto i:x)
+#define rep(i,n) for(auto (i) = 0; (i) < (n); (i)++)
+#define rep1(i,n) for(auto (i) = 1; (i) <= (n); (i)++)
+#define repe(i,a,b) for(auto (i) = (a); (i) <= (b); (i)++)
+#define repd(i,a,b) for(auto (i) = (a); (i) >= (b); (i)--)
+#define trav(i,x) for(auto i:x)
 // PBDS
 template<class T> 
 using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
@@ -43,6 +40,7 @@ const ll LINF = (1ULL<<56);
 #define S second
 #define pb push_back
 #define mp make_pair
+#define SZ(x) ((int)x.size())
 // I/O
 #define fastio ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 void fin(string s){freopen(s.c_str(),"r",stdin);}
@@ -50,17 +48,17 @@ void fout(string s){freopen(s.c_str(),"w",stdout);}
 #ifdef LOCAL
 #define fileio fin("inp.txt");
 #else
-#define fileio 42;
+#define fileio 17;
 #endif
 /*Template ends*/ 
 
-void solve(){
+void solve() { 
 }
 
-int32_t main(){
-	fileio fastio
-	int t = 1;
-	//cin >> t;
-	while(t--)solve();
-	return 0;
+int32_t main() {
+    fileio fastio
+    int t = 1;
+    //cin >> t; 
+    while(t--) solve();
+    return 0;
 }
