@@ -22,10 +22,9 @@ using namespace __gnu_pbds;
 #define vd vector<ld>
 #define vvi vector<vi>
 // For loops
-#define rep(i,n) for(auto (i) = 0; (i) < (n); (i)++)
-#define rep1(i,n) for(auto (i) = 1; (i) <= (n); (i)++)
-#define repe(i,a,b) for(auto (i) = (a); (i) <= (b); (i)++)
-#define repd(i,a,b) for(auto (i) = (a); (i) >= (b); (i)--)
+#define re(i,n) for(auto (i) = 0; (i) < (n); (i)++)
+#define rep(i,a,b) for(auto (i) = (a); (i) <= (b); (i)++)
+#define per(i,a,b) for(auto (i) = (a); (i) >= (b); (i)--)
 #define trav(i,x) for(auto i:x)
 // PBDS
 template<class T> 
