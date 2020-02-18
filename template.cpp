@@ -52,14 +52,12 @@ ll fxp(ll x,ll y,ll p = MOD) {
 template<class T> void re(complex<T>& x);
 template<class T1, class T2> void re(pair<T1,T2>& p);
 template<class T> void re(vector<T>& a);
-template<class T, size_t SZ> void re(array<T,SZ>& a);
 template<class T> void re(T& x) { cin >> x; }
 void re(double& x) { string t; re(t); x = stod(t); }
 void re(ld& x) { string t; re(t); x = stold(t); }
 template<class T, class... Ts> void re(T& t, Ts&... ts) { re(t); re(ts...); }
 template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
 template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
-template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
 template<class T> void re(T a[],int start,int end) { FOR(i,start,end) re(a[i]); } 
 
 void pr(int x) { cout << x; }
