@@ -26,11 +26,12 @@ const int INF = 1e9+9;
 const ll LINF = 1e18+18;
 const int MAXN = 2e5+5;
 
+
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 template <class T> 
-using Tree = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
+using o_tree = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i,a,b) for(auto (i) = (a); (i) <= (b); (i)++)
 #define F0R(i,a) FOR(i,0,(a)-1)
@@ -52,12 +53,14 @@ ll fxp(ll x,ll y,ll p = MOD) {
 template<class T> void re(complex<T>& x);
 template<class T1, class T2> void re(pair<T1,T2>& p);
 template<class T> void re(vector<T>& a);
+template<class T, size_t SZ> void re(array<T,SZ>& a);
 template<class T> void re(T& x) { cin >> x; }
 void re(double& x) { string t; re(t); x = stod(t); }
 void re(ld& x) { string t; re(t); x = stold(t); }
 template<class T, class... Ts> void re(T& t, Ts&... ts) { re(t); re(ts...); }
 template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
 template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
+template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
 template<class T> void re(T a[],int start,int end) { FOR(i,start,end) re(a[i]); } 
 
 void pr(int x) { cout << x; }
@@ -111,6 +114,7 @@ void fout(string s) { freopen(s.c_str(),"w",stdout); }
 /*Template ends*/ 
 
 void solve() {
+    
 } 
 
 int32_t main() {
