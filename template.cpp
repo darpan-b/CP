@@ -26,7 +26,6 @@ const int INF = 1e9+9;
 const ll LINF = 1e18+18;
 const int MAXN = 2e5+5;
 
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
