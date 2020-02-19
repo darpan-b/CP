@@ -41,7 +41,7 @@ using o_tree = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_u
 #define ins insert
 #define SZ(x) ((int)(x).size())
 #define all(x) x.begin(),x.end()
-#define rall(x) x.begin(),x.rend()
+#define rall(x) x.rbegin(),x.rend()
 
 ll fxp(ll x,ll y,ll p = MOD) {
     if(y == 0) return 1; if(y == 1) return (x % p);
