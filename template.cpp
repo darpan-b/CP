@@ -1,5 +1,10 @@
-/*Template begins*/
+/**
+ * @author Darpan Bhattacharya
+ * Created on: 
+ * Description:
+ */ 
 
+/*Template begins*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -34,7 +39,7 @@ using o_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_up
 
 #define FOR(i,a,b) for(auto (i) = (a); (i) <= (b); (i)++)
 #define F0R(i,a) FOR(i,0,(a)-1)
-#define ROF(i,a,b) for(auto (i) = (a); (i >= (b); (i)--)
+#define ROF(i,a,b) for(auto (i) = (a); (i) >= (b); (i)--)
 #define R0F(i,a) ROF(i,(a),0)
 #define trav(i,a) for(auto& i:a)
 
@@ -69,7 +74,6 @@ void fout(string s) { freopen(s.c_str(),"w",stdout); }
 #define fileio do{} while(false); 
 #define cerr if(false) cerr
 #endif
-
 /*Template ends*/ 
 
 void solve() {
@@ -81,10 +85,3 @@ int32_t main() {
     while(t--) solve();
     return 0;
 }
-
-/**
- * Author: DB
- * Date:
- * Link/Description: 
- */
- 
