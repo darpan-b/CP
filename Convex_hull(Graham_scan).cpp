@@ -1,7 +1,6 @@
 /**
  * This code finds the convex hull for a given set of points using Graham's scan algorithm.
  * It is basically a copy of the code here : https://cp-algorithms.com/geometry/grahams-scan-convex-hull.html
- * but commented.
  * Instead of the pt struct I am using pair<T,T> here
  */
 
