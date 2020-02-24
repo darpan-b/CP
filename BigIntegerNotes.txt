@@ -1,6 +1,5 @@
 // The following are some of the methods of the BigInteger class in java
 // They have been copied from: https://www.geeksforgeeks.org/biginteger-class-in-java/
-// It is saved as a .java file for syntax highlighting purpose only
 
     BigInteger abs(): This method returns a BigInteger whose value is the absolute value of this BigInteger.
     BigInteger add(BigInteger val): This method returns a BigInteger whose value is (this + val).
