@@ -72,26 +72,18 @@ bool unite(int u, int v) {
  * by using kruskal's algorithm
  */
 
-long long kruskal() {
+long long kruskal(std::vector<std::pair<long long, std::pair<int, int>>> edges) {
     
-    // the graph is stored in the form of a vector of edges
+    // the graph is stored in the form of a vector of edges (entered as parameter)
     // edges.first stores the weight of the edge
     // edges.second stores the two nodes which are connected by the edge
     // for representation purpose: { cost, { node, node} }
-    std::vector<std::pair<long long, std::pair<int, int>>> edges;
     
-    // take the graph as input
-    int no_edges; 
-    std::cin >> no_edges;
-    
-    for(int i = 0; i < no_edges; i++) {
-        int u, v;
-        long long wt;
-        std::cin >> u >> v;
-        std::cin >> wt;
-        edges.push_back(std::make_pair(wt, std::make_pair(u, v)));
+    // initialize the root and ranks
+    for(int i = 0; i < MAXN; i++) {
+        root[i] = i;
+        ranks[i] = 1;
     }
-    
     
     // sort the edges according to edge weights
     std::sort(edges.begin(), edges.end());
@@ -113,18 +105,5 @@ long long kruskal() {
     }
     
     return tot;
-    
-}
-
-
-/*
- *  driver code
- */
- 
-int main() {
-    
-    kruskal();
-    
-    return 0;
     
 }
