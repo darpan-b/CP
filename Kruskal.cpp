@@ -118,7 +118,7 @@ long long kruskal() {
 
 
 /*
- *  Driver code
+ *  driver code
  */
  
 int main() {
@@ -128,9 +128,3 @@ int main() {
     return 0;
     
 }
-
-
-
-
-
-
