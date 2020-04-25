@@ -25,7 +25,7 @@ using namespace std;
 	  	:: Solution: https://www.codechef.com/viewsolution/31999285
   * Tips:
   		:: default datatype used for storing points here is int
-  		   change it to long long or double it required
+  		   change it to long long or double if required
   * Date: 25 April 2020
   */
 
