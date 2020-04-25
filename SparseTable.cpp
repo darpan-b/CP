@@ -3,9 +3,9 @@
 // this table computes range min queries
 // sparse[i][j] contains min in range [i, i+2^j-1]
 
-int sparse[MAXN][30];
+ll sparse[MX][30];
 
-void build(int a[],int n){
+void build(ll a[],int n){
 	for(int i = 0; i < n; i++){
 		sparse[i][0] = a[i];
 	}
@@ -16,7 +16,7 @@ void build(int a[],int n){
 	}
 }
 
-int query(int start,int end){
+ll query(int start,int end){
 	int sz = log2(end-start+1);
-  return min(sparse[start][sz],sparse[end-(1<<sz)+1][sz]);
+	return min(sparse[start][sz],sparse[end-(1<<sz)+1][sz]);
 }
