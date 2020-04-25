@@ -6,7 +6,7 @@ ll fxp(ll x,ll y,ll p){
 	res *= fxp(x,y/2,p); res %= p;
 	res *= res; res %= p;
 	if(y&1) res *= x; res %= p;
-    return res;
+	return res;
 }
 
 // returns n^(-1) mod p
