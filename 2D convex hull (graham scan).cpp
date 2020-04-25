@@ -17,24 +17,25 @@
 
 using namespace std;
 
-/**
-  * Description: Code to find the convex hull of a given set of points on the 2D plane
-  * Source: Own
-  * Verification: 
+/*
+	Description: Code to find the convex hull of a given set of points on the 2D plane
+	Source: Own
+	Verification: 
 		:: Problem: https://www.codechef.com/problems/ECJAN20I
 	  	:: Solution: https://www.codechef.com/viewsolution/31999285
-  * Tips:
+	Tips:
   		:: default datatype used for storing points here is int
   		   change it to long long or double if required
-  * Date: 25 April 2020
-  */
+	Complexity: O(N logN) [N is the total number of points on the 2D plane]
+	Date: 25 April 2020
+*/
 
 const int MX = 1e4+5;
 int n,r;
 pii a[MX]; // stores all the points on the plane
 vector<pii> hull; // stores the convex hull of the points
 
-/*  returns the signed area of the triangle formed by the points a,b,c
+/*      returns the signed area of the triangle formed by the points a,b,c
 	if the signed area is +ve it means that the orientation of the points is anticlockwise
 	else the orientation od the points a,b,c is clockwise
 	Reference: https://cp-algorithms.com/geometry/oriented-triangle-area.html
@@ -52,7 +53,7 @@ bool cw(pii& a,pii& b,pii& c) {
 	return cross(a,b,c) < 0;
 }
 
-/*  finds the convex hull of the points in the array a[] 
+/*      finds the convex hull of the points in the array a[] 
 	and stores them in the the "hull" vector
 */
 void convexHull() {
