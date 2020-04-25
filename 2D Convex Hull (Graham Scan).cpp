@@ -26,7 +26,7 @@ using namespace std;
   * Tips:
   		:: default datatype used for storing points here is int
   		   change it to long long or double it required
-  	Date: 25 April 2020
+  * Date: 25 April 2020
   */
 
 const int MX = 1e4+5;
