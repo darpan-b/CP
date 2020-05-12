@@ -11,4 +11,4 @@ void sieve(int n){
 			}
 		}
 	}
-}
+} 
