@@ -1,0 +1,33 @@
+Articulation point and Bridges in a graph
+-------------------------------------------
+
+Q.  What is an articulation point and what is a bridge ?
+
+S.  An articulation point in a graph is a vertex, which when removed from the graph, increases the number of connected components in the graph.
+    Similarly, a bridge is an edge which when removed from the graph, increases the number of connected components in it.
+
+Q.  How to find articulation points and bridges in a graph ? 
+S.  Artculation points in a graph can be detected by Tarjan's algorithm.
+
+Tarjan's algorithm
+~~~~~~~~~~~~~~~~~~~
+Run a DFS from any arbitrary vertex. Maintain low[u] which stores the lowest possible entry time of a node that can be reached
+from node u, and disc[u] which stores the discovery time for each node u. Entry time for the node can be kept track of by using
+a global/static variable. When some node u is visited during the DFS traversal, for all adjacent unvisited vertices v of u, run
+DFS for them and update low[u] = min(low[u], low[v]). Also maintain the count of children in the DFS tree of u. u is an
+articulation point if one of the following conditions hold:
+1. low[v] >= disc[u] for some v in the DFS tree of u
+   For bridges, this is the only change in the algorithm:
+   if low[v] > disc[u], then the edge {u,v} is a bridge
+2. u is the root of the DFS tree and it has 2 or more children.
+For all adjacent visited vertices w of u, update low[u] = min(low[u], disc[w])
+We don't do low[u] = min(low[u], low[w]) as it will not detect cycles for which u is a root, and thus is an articulation point.
+For more info on this stuff, check out this blog: 
+https://codeforces.com/blog/entry/71146
+
+Problems:
+Problem 1: CC CRITINTS (articulation points)
+Solution 1: https://www.codechef.com/viewsolution/31383007
+Problem 2: CC FTALES01 (bridges)
+Solution 2: https://www.codechef.com/viewsolution/30751228
+
