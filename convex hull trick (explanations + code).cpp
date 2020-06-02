@@ -9,7 +9,6 @@
  * Link to the problem: https://codeforces.com/contest/319/problem/C
  * The code may differ a bit for the problems that require max over some subset of indices.
  * For the min problem, we sort the lines in decreasing order of slope, while for the max problem, we sort in increasing order.
- * The comments may be updated after meooow answers the clarifications.
 */
 
 #include <bits/stdc++.h>
