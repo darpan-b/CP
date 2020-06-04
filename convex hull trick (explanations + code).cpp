@@ -9,6 +9,8 @@
  * Link to the problem: https://codeforces.com/contest/319/problem/C
  * The code may differ a bit for the problems that require max over some subset of indices.
  * For the min problem, we sort the lines in decreasing order of slope, while for the max problem, we sort in increasing order.
+ * This is because for the min problem, we use the upper part of the convex hull, while for the max problem, we use the lower part of the hull.
+ * Observe this by plotting slopes and you will realize that lines with negative slope give the min y value for some corresponding x value.
 */
 
 #include <bits/stdc++.h>
@@ -78,7 +80,8 @@ struct CHT {
 
 	// the middle line is useless if the y co-ordinate of the meeting point between the left and the right lines
 	// is more than the y co-ordinate of the meeting point between the middle and right lines.
-	// (why ? to be updated later after reply from meooow on cf)
+	// this is because, in this problem, we require the min y value for some corresponding x value.
+	// It'd be return yMiddle < yLeft if the problem was a max problem, and thus we would be using the lower part of the hull instead of the upper part.
 	bool useless(Line lft,Line mddle,Line rit) { 
 		ld x = lft.meet(rit);
 		ld yMiddle = x*mddle.m+mddle.c;
@@ -127,7 +130,8 @@ struct CHT {
 		// then keep it or erase it based on the y-intercept.
 		// here it erases the already present line if the y-intercept of that line is lesser
 		// than that of the current line. 
-		// (why? maybe because this problem asks for min over a range? again, waiting for meooow reply)
+		// this is because, again, as we are forming the upper part of the hull, lower the slope, lower the answer.
+		// it'd be if (it->c < c) hull.erase(it) in case it was a max problem and we were trying to form the lower part of the hull.
 		if(it != hull.end() && it->m == temp.m) {
 			if(it->c > c) hull.erase(it);
 			else return;
