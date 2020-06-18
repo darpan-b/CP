@@ -1,5 +1,5 @@
 Fenwick tree or Binary Indexed Tree is a data structure that is used for basically same stuff as segment tree. 
-Fenwick tree takes O(n) memory (no extra constant factor involved), and does both update and query operations in O(n) time.
+Fenwick tree takes O(n) memory (no extra constant factor involved), and does both update and query operations in O(log n) time.
 
 Further notes are written considering the opertation f(l,r) = sum of elements in the range [l,r].
 
