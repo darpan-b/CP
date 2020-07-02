@@ -1,23 +1,30 @@
-// implementation of union-find algorithm (DSU)
-// union_(int u,int v) returns true iff nodes u & v are connected
 
-int root[MAXN],ranks[MAXN];
- 
-int findroot(int node){
-	if(root[node] == node) return node;
-	else return root[node] = findroot(root[node]);
-}
- 
-bool union_(int u,int v){
-	if(findroot(u) == findroot(v)) return false;
-	u = findroot(u);
-	v = findroot(v);
-	if(ranks[u] > ranks[v]){
-		root[v] = u;
-		ranks[u] += ranks[v];
-	}else{
-		root[u] = v;
-		ranks[v] += ranks[u];
+const int MAXN = 2e5+5;
+
+struct DSU {
+	int root[MAXN],ranks[MAXN];
+	void init() {
+		F0R(i,MAXN) {
+			root[i] = i; ranks[i] = 1;
+		}
 	}
-	return true;
-}
+	int getRoot(int node) {
+		if(root[node] == node) return node;
+		else return root[node] = getRoot(root[node]);
+	}
+	bool sameComp(int u,int v) {
+		u = getRoot(u); v = getRoot(v);
+		return (u == v);
+	}
+	bool unite(int u,int v) {
+		u = getRoot(u); v = getRoot(v);
+		if(u == v) return false;
+		if(ranks[u] > ranks[v]) {
+			ranks[u] += ranks[v]; root[v] = u;
+		} else {
+			ranks[v] += ranks[u]; root[u] = v;
+		}
+		return true;
+	}
+};
+ 
