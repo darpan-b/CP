@@ -1,0 +1,20 @@
+Centroid Decomposition
+-----------------------
+
+-> Centroid Decomposition is a cool technique for solving tree problems.
+-> In centroid decomp, you create a separate tree from the original tree known as the centroid tree.
+-> The main property of the centroid tree is that it's depth is atmost log2(number of nodes), which allows us to do a lot of cool stuff.
+
+Algo:
+To build a centroid tree, start from the root of the tree. Maintain a queue which contains elements in the form of (node, parent in centroid tree).
+Push the root of the original tree in the queue. While the queue is not empty, take the earliest node, u in the queue which is not marked as centroid.
+Find out the subtree size of all nodes in the subtree of u. (IGNORE NODES ALREADY MARKED AS CENTROID WHILE CALCULATING SUBTREE SIZE).
+Now mark u as current centroid, and from u, run a dfs. In the dfs, if you encounter an adjacent node, v, and the condition (subtree size(v) * 2 > subtree size(u)) holds, 
+it means that the next centroid is in that subtree. Hence, mark v as the current centroid and carry on recursively until you find the next centroid.
+After finding out the centroid, mark it as centroid and create an edge between the centroid and it's parent in the centroid tree. Now, for all the
+unmarked adjacent nodes of the current centroid, push them in the queue. Repeat the process until all the nodes of the tree are marked as centroid, 
+and TADA! You have your cetroid tree! :)
+
+Problems based on Centroid Decompostion (fairly direct Centroid Decomp):
+1. Problem: https://codeforces.com/contest/342/problem/E (CF Xenia and Tree) 
+   Solution: https://codeforces.com/contest/342/submission/76838160
