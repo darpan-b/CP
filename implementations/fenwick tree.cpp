@@ -1,22 +1,20 @@
-// implementation of BIT (also called Fenwick tree) to find sum of a given range
-// array is assumed to be 1-indexed
-// fenwick[] is 1-indexed
-// int may be changed to long long if required
-
-int fenwick[MAXN],n;
-
-void update(int idx,int val){
-	while(idx <= n){
-		fenwick[idx] += val;
-		idx += (idx&(-idx));
+struct BIT {
+	int n;
+	ll bit[MAXN]; // 1-indexed, so add 1 to parameters before calling
+	void update(int idx, ll val) {
+		// val will be ADDED to idx, not changed to what the value at idx was
+		while(idx <= n) {
+			bit[idx] += val; idx += (idx&-idx);
+		}
 	}
-}
-
-int query(int idx){
-	int res = 0;
-	while(idx > 0){
-		res += fenwick[idx];
-		idx -= (idx&(-idx)); 
+	ll query(int idx) {
+		ll res = 0;
+		while(idx > 0) {
+			res += bit[idx]; idx -= (idx&-idx);
+		}
+		return res;
 	}
-	return res;
-}
+	ll query(int u, int v) {
+		return query(v)-query(u-1);
+	}
+};
