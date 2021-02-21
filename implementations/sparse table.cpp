@@ -1,22 +1,19 @@
-// sparse table is used for range queries on static arrays in O(1) time
-// build() takes O(nlogn) time
-// this table computes range min queries
-// sparse[i][j] contains min in range [i, i+2^j-1]
-
-ll sparse[MX][30];
-
-void build(ll a[],int n){
-	for(int i = 0; i < n; i++){
-		sparse[i][0] = a[i];
-	}
-	for(int sz = 1; (1<<sz) <= n; sz++){
-		for(int i = 0; i+(1<<sz)-1 < n; i++){
-			sparse[i][sz] = min(sparse[i][sz-1],sparse[i+(1<<(sz-1))][sz-1]);
+struct Sparse {
+	vector<vector<ll>> t;
+	int n;
+	void init(int _n, vector<ll>& a) {
+		n = _n;
+		t.assign(n,vector<ll>(21,(ll)1e18));
+		for(int i = 0; i < n; i++) t[i][0] = a[i];
+		for(int sz = 1; (1<<sz) <= n; sz++) {
+			for(int i = 0; i+(1<<sz)-1 < n; i++) {
+				t[i][sz] = min(t[i][sz-1],t[i+(1<<(sz-1))][sz-1]);
+			}
 		}
 	}
-}
-
-ll query(int start,int end){
-	int sz = log2(end-start+1);
-	return min(sparse[start][sz],sparse[end-(1<<sz)+1][sz]);
-}
+	ll q(int s,int e) {
+		if(e-s+1 <= 0) return (ll)1e15;
+		int sz = log2(e-s+1);
+		return min(t[s][sz],t[e-(1<<sz)+1][sz]);
+	}
+};
