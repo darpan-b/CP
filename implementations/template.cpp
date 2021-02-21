@@ -1,5 +1,8 @@
 #ifdef LOCAL
-#include "debugger.h"
+	#include "debugger.h"
+	#define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", debug(__VA_ARGS__)
+#else
+	#define dbg(...) 5
 #endif
 #include <bits/stdc++.h>
 using namespace std;
@@ -11,7 +14,7 @@ using namespace std;
 #define S second
 
 void solve() {
-
+	
 }
 
 int main() {
