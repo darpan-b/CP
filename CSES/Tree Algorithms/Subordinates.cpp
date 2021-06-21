@@ -1,11 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#ifdef LOCAL
-#include "debugger.h"
-#define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", debug(__VA_ARGS__)
-#else
-#define dbg(...) 5
-#endif
 
 const int MAXN = 2e5+5;
 
