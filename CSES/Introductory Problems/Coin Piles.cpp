@@ -21,4 +21,4 @@ int main() {
   cin >> test;
   while (test--) solve();
   return 0;
-}
+} 
