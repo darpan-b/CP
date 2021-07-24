@@ -44,4 +44,5 @@ int main() {
   }
   cout << ans.size() << '\n';
   for (auto& e : ans) cout << e.first << ' ' << e.second << '\n';
+  return 0;
 }
