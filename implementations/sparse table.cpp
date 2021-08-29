@@ -1,19 +1,41 @@
-struct Sparse {
-	vector<vector<ll>> t;
+template<typename T>
+struct SparseTable
+{
 	int n;
-	void init(int _n, vector<ll>& a) {
-		n = _n;
-		t.assign(n,vector<ll>(21,(ll)1e18));
-		for(int i = 0; i < n; i++) t[i][0] = a[i];
-		for(int sz = 1; (1<<sz) <= n; sz++) {
-			for(int i = 0; i+(1<<sz)-1 < n; i++) {
-				t[i][sz] = min(t[i][sz-1],t[i+(1<<(sz-1))][sz-1]);
+	int log_n;
+	vector<vector<T>> sparse;
+	SparseTable()
+	{
+		n=0;
+		sparse.clear();
+	}
+	SparseTable(int _n)
+	{
+		n=_n;
+		log_n=__lg(n)+2;
+		sparse.assign(n,vector<T>(log_n,0));
+	}
+	T combine(T a,T b)
+	{
+		return max(a,b);
+	}
+	void build(vector<T>& a,int _n)
+	{
+		n=_n;
+		log_n=__lg(n)+2;
+		sparse.assign(n,vector<T>(log_n,0));
+		for(int i=0;i<n;i++) sparse[i][0]=a[i];
+		for(int i=1;i<log_n;i++){
+			for(int j=0;j<n;j++){
+				if(j+(1<<(i-1))>=n) continue;
+				sparse[j][i]=combine(sparse[j][i-1],sparse[j+(1<<(i-1))][i-1]);
 			}
 		}
 	}
-	ll q(int s,int e) {
-		if(e-s+1 <= 0) return (ll)1e15;
-		int sz = log2(e-s+1);
-		return min(t[s][sz],t[e-(1<<sz)+1][sz]);
+	T query(int l,int r)
+	{
+		if(r-l<0) return 0;
+		int log_sz=__lg(r-l+1);
+		return combine(sparse[l][log_sz],sparse[r-(1<<log_sz)+1][log_sz]);
 	}
 };
