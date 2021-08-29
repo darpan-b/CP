@@ -2,7 +2,9 @@ namespace Math
 {
 const long long MOD = 1e9+7;
 const int SIZE = 1e6+5;
-// GCD function which basically uses std::__gcd() but returns gcd(0,0) = 0
+/* 
+ * GCD function which basically uses std::__gcd() but returns gcd(0,0) = 0
+ */ 
 template<typename T> T gcd(T a,T b)
 {
 	if(a>b) swap(a,b);
@@ -38,9 +40,11 @@ long long fxp(long long x,long long p)
 	res%=MOD;
 	return res;
 }
-// Say ax+by = gcd(a,b)
-// Given a,b, extended euclid calculates the value of gcd(a,b) while simultaneously
-// finding out the coefficients for a and b, that is, x and y respectively.
+/* 
+ * Say ax+by = gcd(a,b)
+ * Given a,b, extended euclid calculates the value of gcd(a,b) while simultaneously
+ * finding out the coefficients for a and b, that is, x and y respectively.
+ */
 long long extendedEuclid(long long a,long long b,long long& x,long long& y)
 {
 	if(b==0){
@@ -54,7 +58,9 @@ long long extendedEuclid(long long a,long long b,long long& x,long long& y)
 	y=x1-y1*(a/b);
 	return g;
 }
-// calculates the modular inverse of x
+/* 
+ * calculates the modular inverse of x
+ */
 long long modinv(long long x)
 {
 	long long x1,y1,z=0;
@@ -63,7 +69,9 @@ long long modinv(long long x)
 }
 long long factorial[SIZE];
 long long inverseFactorial[SIZE];
-// ALWAYS INITIALIZE precompute() before using any functions in this namespace
+/*
+ * ALWAYS INITIALIZE precompute() before using any functions in this namespace
+ */
 void precompute()
 {
 	factorial[0]=1;
