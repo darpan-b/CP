@@ -1,3 +1,7 @@
+/*
+ * Sparse table for range max/min queries in O(1)
+ * O(N log N) building time
+ */
 template<typename T>
 struct SparseTable
 {
@@ -15,6 +19,9 @@ struct SparseTable
 		log_n=__lg(n)+2;
 		sparse.assign(n,vector<T>(log_n,0));
 	}
+	/*
+	 * modify the combine function to max or min as required
+	 */
 	T combine(T a,T b)
 	{
 		return max(a,b);
