@@ -2,9 +2,8 @@
  * Segment Tree with point update and range query
  */
 template<typename T>
-class SegmentTree
+struct SegmentTree
 {
-public:
 	vector<T> seg;
 	SegmentTree()
 	{
