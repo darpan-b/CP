@@ -1,20 +1,44 @@
-struct BIT {
+/*
+ * Fenwick tree / Binary indexed tree
+ * range query, point update, combine function: addition
+ */
+template<typename T>
+struct FenwickTree
+{
 	int n;
-	ll bit[MAXN]; // 1-indexed, so add 1 to parameters before calling
-	void update(int idx, ll val) {
-		// val will be ADDED to idx, not changed to what the value at idx was
-		while(idx <= n) {
-			bit[idx] += val; idx += (idx&-idx);
+	vector<T> fenwick;
+	FenwickTree()
+	{
+		fenwick.clear();
+	}
+	FenwickTree(int _n)
+	{
+		n=_n;
+		fenwick.assign(n+1,0);
+	}
+	void build(vector<T>& a)
+	{
+		for(int i=1;i<=n;i++){
+			fenwick[i]+=a[i-1];
+			if(i+(i&-i)<=n) fenwick[i+(i&-i)]+=fenwick[i];
 		}
 	}
-	ll query(int idx) {
-		ll res = 0;
-		while(idx > 0) {
-			res += bit[idx]; idx -= (idx&-idx);
-		}
+	/*
+	 * take note that it DOES NOT change idx to val
+	 * it ADDS val to element at index idx
+	 */
+	void update(int idx,T val)
+	{
+		for(int i=idx+1;i<=n;i+=(i&-i)) fenwick[idx]+=val;
+	}
+	T query(int idx)
+	{
+		T res=0;
+		for(int i=idx+1;i>=1;i-=(i&-1)) res+=fenwick[i];
 		return res;
 	}
-	ll query(int u, int v) {
-		return query(v)-query(u-1);
+	T query(int l,int r)
+	{
+		return query(r)-query(l-1);
 	}
 };
