@@ -1,5 +1,6 @@
-struct DSU
+class DSU
 {
+public:
 	vector<int> root;
 	vector<int> ranks;
 	DSU()
