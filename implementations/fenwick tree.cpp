@@ -42,3 +42,30 @@ struct FenwickTree
 		return query(r)-query(l-1);
 	}
 };
+
+struct FenwickTree{
+    int n;
+    vector<long long> tree;
+    FenwickTree() : n(),tree() {}
+    FenwickTree(int _n) : n(_n),tree(n+5,0) {}
+    
+    void update(int idx,long long val){
+        idx++;
+        while(idx<=n){
+            tree[idx]+=val;
+            idx+=(idx&(-idx));
+        }
+    }
+    long long query(int idx){
+        idx++;
+        long long res=0;
+        while(idx>0){
+            res+=tree[idx];
+            idx-=(idx&(-idx));
+        }
+        return res;
+    }
+    long long query(int l,int r){
+        return query(r)-query(l-1);
+    }
+};
