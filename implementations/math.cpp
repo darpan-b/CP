@@ -38,7 +38,7 @@ namespace Math {
      * Given a,b, extended euclid calculates the value of gcd(a,b) while simultaneously
      * finding out the coefficients for a and b, that is, x and y respectively.
      */
-    long long extendedEuclid(long long a, long long b, long long & x, long long & y) {
+    long long extendedEuclid(long long a, long long b, long long& x, long long& y) {
         if (b == 0) {
             x = 1;
             y = 0;
