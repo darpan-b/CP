@@ -1,7 +1,7 @@
 template <typename T>
 struct FenwickTree {
     int n;
-    vector <T> tree;
+    vector<T> tree;
     FenwickTree(): n(), tree() {}
     FenwickTree(int _n): n(_n), tree(n + 5, 0) {}
 
