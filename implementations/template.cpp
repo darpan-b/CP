@@ -3,10 +3,10 @@
 using namespace std;
 
 #ifdef LOCAL
-    #include "debugger.h"
-    #define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", debug(__VA_ARGS__)
+#include "debugger.h"
+#define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", debug(__VA_ARGS__)
 #else
-    #define dbg(...) 5
+#define dbg(...) 5
 #endif
 
 #define ll long long
