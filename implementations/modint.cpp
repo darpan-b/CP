@@ -143,4 +143,4 @@ struct ModInt {
 };
 template<const int& MOD> ModInt<MOD> ModInt<MOD>::save_inv[ModInt<MOD>::SAVE_INV];
 extern const int MOD = 1e9 + 7;
-using mint = ModInt<MOD> ;
+using mint = ModInt<MOD>;
