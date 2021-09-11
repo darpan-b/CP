@@ -1,3 +1,7 @@
+/**
+ * Segment Tree with Lazy Propagation
+ * Supports range sum queries, range updates, both in O(log n)
+ */
 struct SegmentTreeLazy {
     vector<long long> seg;
     vector<long long> lazy;
