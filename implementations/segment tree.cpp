@@ -10,7 +10,6 @@ public:
         n = 0;
         seg.clear();
     }   
-
     SegmentTree(int _n)
     {
         n = _n;
@@ -23,7 +22,6 @@ private:
         // TODO: change as per problem
         return a+b;        
     }
-
     void build(int node,int ss, int se, const vector<T>& a)
     {
         if(ss > se) return;
@@ -36,7 +34,6 @@ private:
         build(node*2+2,mid+1,se,a);
         seg[node] = combine(seg[node*2+1], seg[node*2+2]);
     }
-
     void update(int node, int ss,int se,int updidx, const T& val)
     {
         if(ss > se || updidx > se || updidx < ss) return;
@@ -50,7 +47,6 @@ private:
         update(node*2+2,mid+1,se,updidx,val);
         seg[node] = combine(seg[node*2+1],seg[node*2+2]);
     }
-
     T query(int node,int ss,int se, int qs,int qe)
     {
         if(ss > se || qs > se || qe < ss){
@@ -68,12 +64,10 @@ public:
     {
         build(0,0,n-1,a);
     }
-
     inline void update(int updidx,T val)
     {
         update(0,0,n-1,updidx,val);
     }
-
     inline T query(int qs,int qe)
     {
         return query(0,0,n-1,qs,qe);        
