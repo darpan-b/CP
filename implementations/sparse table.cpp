@@ -10,14 +10,12 @@ public:
         n = logn = 0;
         table.clear();
     }
-
     SparseTable(int _n)
     {  
         n = _n;
         logn = __lg(n)+1;
         table.assign(n,vector<T>(logn,0));
     }
-
     T combine(const T& a, const T& b)
     {
         // TODO: modify as per problem
@@ -34,7 +32,6 @@ public:
             }
         }
     }
-
     T query(int l,int r)
     {
         int logsz = __lg(r-l+1);
