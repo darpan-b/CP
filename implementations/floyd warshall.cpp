@@ -1,17 +1,19 @@
-// floyd-warshall algorithm to find all pairs shortest path
-// g[i][j] should be initialized to INF before accepting the edge weights as input
+//NOT TESTED
 
-ll g[MAXN][MAXN];
-int n;
+// Floyd-Warshall algorithm to find all pairs shortest path.
+// Time complexity: O(N * N * N)
 
-void floyd_warshall(){
-	for(int i = 0; i < n; i++){
-		for(int j = 0; j < n; j++){
-			for(int k = 0; k < n; k++){
-				if(g[j][k] > g[j][i]+g[i][k]){
-					g[j][k] = g[j][i]+g[i][k];
-				}
-			}
-		}
-	}
+//Initialize dist[i][j] to inf or edge weight for all i, j before function call
+
+void floydWarshall(vector<vector<long long>>& dist) {
+    int n = dist.size();
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            for (int k = 0; k < n; k++) {
+                if (dist[j][k] > dist[j][i] + dist[i][k]) {
+                    dist[j][k] = dist[j][i] + dist[j][k];
+                }
+            }
+        }
+    }
 }
