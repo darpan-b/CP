@@ -12,11 +12,11 @@ public:
     sparse.assign(n, vector<T>(logn, 0));
   }
 
-  inline T combine(const T& lhs, const T& rhs) {
+  inline T combine(const T &lhs, const T &rhs) {
     return min(lhs, rhs);
   }
 
-  void build(const vector<T>& a) {
+  void build(const vector<T> &a) {
     for (int i = 0; i < n; i++) sparse[i][0] = a[i];
     for (int i = 1; i < logn; i++) {
       for (int j = 0; j < n; j++) {
