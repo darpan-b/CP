@@ -1,7 +1,7 @@
 template<typename T>
 class SegmentTree {
 public:
-  vector<long long> seg;
+  vector<T> seg;
 
   SegmentTree() = default;
 
@@ -9,11 +9,11 @@ public:
     seg.assign(4 * n, 0);
   }
 
-  inline T combine(const T& lhs, const T& rhs) {
+  inline T combine(const T &lhs, const T &rhs) {
     return lhs + rhs;
   }
 
-  void build(int node, int ss, int se, const vector<T>& a) {
+  void build(int node, int ss, int se, const vector<T> &a) {
     if (ss > se) return;
     if (ss == se) {
       seg[node] = a[ss];
@@ -25,7 +25,7 @@ public:
     seg[node] = combine(seg[node * 2 + 1], seg[node * 2 + 2]);
   }
 
-  void update(int node, int ss, int se, int uidx, const T& val) {
+  void update(int node, int ss, int se, int uidx, const T &val) {
     if (ss > se || uidx > se || uidx < ss) return;
     if (ss == se && ss == uidx) {
       seg[node] = val;
@@ -41,8 +41,8 @@ public:
     if (ss > se || qs > se || qe < ss) return 0LL;
     if (ss >= qs && se <= qe) return seg[node];
     int mid = (ss + se) / 2;
-    long long leftQuery = query(node * 2 + 1, ss, mid, qs, qe);
-    long long rightQuery = query(node * 2 + 2, mid + 1, se, qs, qe);
+    T leftQuery = query(node * 2 + 1, ss, mid, qs, qe);
+    T rightQuery = query(node * 2 + 2, mid + 1, se, qs, qe);
     return combine(leftQuery, rightQuery);
   }
 };
