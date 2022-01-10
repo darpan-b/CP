@@ -74,8 +74,8 @@ namespace Math
 
     long long factorial[SIZE];
     long long inverseFactorial[SIZE];
-    // TODO: ALWAYS INITIALIZE precompute() before using any functions in this namespace
     
+    // TODO: ALWAYS INITIALIZE precompute() before using any functions in this namespace
     void precompute()
     {
         factorial[0] = 1;
