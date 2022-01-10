@@ -8,7 +8,8 @@ using namespace std;
 #define dbg(...) 5
 #endif
 
-int main() {
+int main()
+{
 #ifdef LOCAL
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
