@@ -7,7 +7,7 @@ vector<pair<long long, pair<int, int>>> kruskal(vector<pair<long long, pair<int,
 
     sort(edgesCopy.begin(), edgesCopy.end());
 
-    for (const auto &e : edgesCopy)
+    for (const auto& e : edgesCopy)
     {
         if (dsu.unite(e.second.first, e.second.second))
             spanningTree.push_back(e);
