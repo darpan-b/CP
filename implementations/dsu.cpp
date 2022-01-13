@@ -1,7 +1,7 @@
 class DSU
 {
 public:
-	vector<int> root, ranks;
+	std::vector<int> root, ranks;
 	
 	DSU() = default;
 	
@@ -9,7 +9,7 @@ public:
 	{
 		root.assign(n + 1, 0);
 		ranks.assign(n + 1, 0);
-		iota(root.begin(), root.end(), 0);
+		std::iota(root.begin(), root.end(), 0);
 	}
 	
 	int findRoot(int node)
@@ -26,6 +26,7 @@ public:
 		v = findRoot(v);
 		if (u == v)
 			return false;
+		
 		if (ranks[u] > ranks[v])
 		{
 			root[v] = u;
