@@ -1,7 +1,7 @@
 class DSU
 {
 public:
-	std::vector<int> root, ranks;
+	vector<int> root, ranks;
 	
 	DSU() = default;
 	
@@ -9,7 +9,7 @@ public:
 	{
 		root.assign(n + 1, 0);
 		ranks.assign(n + 1, 0);
-		std::iota(root.begin(), root.end(), 0);
+		iota(root.begin(), root.end(), 0);
 	}
 	
 	int findRoot(int node)
