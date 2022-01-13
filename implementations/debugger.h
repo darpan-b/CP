@@ -8,74 +8,87 @@
 #include <set>
 #include <bitset>
 
-using namespace std;
+#define dbg(...) std::cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", debug(__VA_ARGS__)
 
-#define dbg(...) cerr << "LINE(" << __LINE__<< ") -> [" << #__VA_ARGS__<< "]: [", debug(__VA_ARGS__)
+std::string to_string(int value) { return std::to_string(value); }
+std::string to_string(long value) { return std::to_string(value); }
+std::string to_string(long long value) { return std::to_string(value); }
+std::string to_string(unsigned value) { return std::to_string(value); }
+std::string to_string(unsigned long value)  { return std::to_string(value); }
+std::string to_string(unsigned long long value) { return std::to_string(value); }
+std::string to_string(float value) { return std::to_string(value); }
+std::string to_string(double value) { return std::to_string(value); }
+std::string to_string(long double value) { return std::to_string(value); }
 
-
-string to_string(char c) {
-  return string(1, c);
+std::string to_string(char c)
+{
+	return std::string(1, c);
 }
 
-string to_string(const char* c) {
-  return (string) c;
+std::string to_string(const char* c)
+{
+	return (std::string)c;
 }
 
-string to_string(bool b) {
-  return to_string((int) b);
+std::string to_string(bool b)
+{
+	return to_string((int)b);
 }
 
-string to_string(vector<bool> v) {
-  string res = "{";
-  for (int i = 0; i < (int) v.size(); i++) {
-    res += (char)('0' + v[i]);
-  }
-  res += "}";
-  return res;
+std::string to_string(std::vector<bool> v)
+{
+	std::string res = "{";
+	for (int i = 0; i < (int)v.size(); i++)
+		res += (char)('0' + v[i]);
+	res += "}";
+	return res;
 }
 
-template<size_t siz>
-string to_string(bitset<siz> b) {
-  string res = "{";
-  for (int i = 0; i < siz; i++) {
-    res += (char)('0' + b[i]);
-  }
-  res += "}";
-  return res;
+template <size_t siz>
+std::string to_string(std::bitset<siz> b)
+{
+	std::string res = "{";
+	for (int i = 0; i < siz; i++)
+		res += (char)('0' + b[i]);
+	res += "}";
+	return res;
 }
 
-template<class A, class B>
-string to_string(pair<A, B> p);
+template <class A, class B>
+std::string to_string(std::pair<A, B> p);
 
-template<class A>
-string to_string(A a) {
-  string res = "{";
-  bool f = true;
-  for (const auto& e: a) {
-    if (!f) {
-      res += " ,";
-    }
-    res += to_string(e);
-    f = false;
-  }
-  res += "}";
-  return res;
+template <class A>
+std::string to_string(A a)
+{
+	std::string res = "{";
+	bool f = true;
+	for (const auto& e : a)
+	{
+		if (!f)
+			res += ", ";
+		res += to_string(e);
+		f = false;
+	}
+	res += "}";
+	return res;
 }
 
-template<class A, class B>
-string to_string(pair<A, B> p) {
-  return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";
+template <class A, class B>
+std::string to_string(std::pair<A, B> p)
+{
+	return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";
 }
 
-void debug() {
-  cerr << "]\n";
+void debug()
+{
+	std::cerr << "]\n";
 }
 
-template<class A, class... B>
-void debug(const A & a, const B & ...b) {
-  cerr << to_string(a);
-  if (sizeof...(b)) {
-    cerr << ", ";
-  }
-  debug(b...);
+template <class A, class... B>
+void debug(const A& a, const B&... b)
+{
+	std::cerr << to_string(a);
+	if (sizeof...(b))
+		std::cerr << ", ";
+	debug(b...);
 }
