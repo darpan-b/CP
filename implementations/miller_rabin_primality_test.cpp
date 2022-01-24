@@ -24,7 +24,7 @@ long long multMod(long long a, long long b, long long mod)
     return x % mod;
 }
 
-/// Miller-Rabin primality test, iteration signifies the accuracy of the test
+/// Miller-Rabin primality test, #iTimes is directly proportional to accuracy
 bool isProbablePrime(long long p, int iTimes)
 {
     if (p < 2)
