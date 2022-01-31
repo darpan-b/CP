@@ -1,7 +1,7 @@
 // const int MAXN = 2e5 + 5;
 // int n;
 // vector<pair<int, long long>> adj[MAXN];
-long long dist[MAXN];
+long long dist[MAXN]; 
 
 void dijkstra(int source)
 {
