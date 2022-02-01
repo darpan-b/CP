@@ -11,12 +11,12 @@ public:
         seg.assign(4 * n, 0);
     }
 
-    inline T combine(const T& lhs, const T&  rhs)
+    inline T combine(const T &lhs, const T &rhs)
     {
         return lhs + rhs;
     }
 
-    void build(int node, int ss, int se, const vector<T>& a)
+    void build(int node, int ss, int se, const vector<T> &a)
     {
         if (ss > se)
             return;
@@ -31,7 +31,7 @@ public:
         seg[node] = combine(seg[node * 2 + 1], seg[node * 2 + 2]);
     }
 
-    void update(int node, int ss, int se, int uidx, const T& val)
+    void update(int node, int ss, int se, int uidx, const T &val)
     {
         if (ss > se || uidx > se || uidx < ss)
             return;
