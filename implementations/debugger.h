@@ -10,12 +10,14 @@
 
 #define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", debug(__VA_ARGS__)
 
+using namespace std;
+
 string to_string(char c)
 {
     return string(1, c);
 }
 
-string to_string(const char* c)
+string to_string(const char *c)
 {
     return (string)c;
 }
@@ -52,7 +54,7 @@ string to_string(A a)
 {
     string res = "{";
     bool f = true;
-    for (const auto& e : a)
+    for (const auto &e : a)
     {
         if (!f)
             res += ", ";
@@ -75,7 +77,7 @@ void debug()
 }
 
 template <class A, class... B>
-void debug(const A& a, const B&... b)
+void debug(const A &a, const B &...b)
 {
     cerr << to_string(a);
     if (sizeof...(b))
