@@ -36,3 +36,4 @@ int main()
 	cout << curcolor - 1 << "\n";
 	return 0;
 }
+ 
