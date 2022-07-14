@@ -6,7 +6,6 @@ int anc[MAXN][MAXLOG];
  
 void dfs(int node, int p)
 {
-    dbg(node, p);
     anc[node][0] = p;
     if (p == -1) dep[node] = 0;
     else dep[node] = dep[p] + 1;
