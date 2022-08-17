@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 struct sieve
 {
     vector<bool> is_prime;

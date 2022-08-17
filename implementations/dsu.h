@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 struct disjoint_set_union
 {
     vector<int> roots, ranks;

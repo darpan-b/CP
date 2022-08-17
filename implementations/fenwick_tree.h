@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 template<typename T>
 struct fenwick_tree
 {
@@ -40,6 +37,3 @@ struct fenwick_tree
         return query(hi) - query(lo - 1);
     }
 };
-
-
-
