@@ -5,16 +5,16 @@ public class Main {
     
     InputReader in;
     
-    void solve() {
+    void solve() throws Exception {
     }
     
-    void run() {
+    void run() throws Exception {
         in = new InputReader();
         int test = in.nextInt();
         while (test--) solve();
     }
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         new Main().run();
     }
 }
