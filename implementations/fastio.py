@@ -1,4 +1,4 @@
-# works well with pypy, dunno about python tho
+# works well with pypy, may not work for python
 import os
 import sys
 from io import BytesIO, IOBase
