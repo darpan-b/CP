@@ -1,5 +1,0 @@
-Code should be indented by 4 spaces.
-No spaces should be on either side of operators.
-Use blank lines to separate ideas.
-For C++ and Java, opening braces should be on the same line as that of the conditional / iteration statement.
-For C, opening braces of functions should be on a new line, rest is same as C++.
