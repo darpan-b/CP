@@ -1,2 +1,2 @@
-To sort an array by swapping elements from the same array, the minimum number of swaps needed is n - number of cycles, where cycles is the cycles in the directed graph where each edge is i -> a[i].
+To sort an array by swapping elements from the same array, the minimum number of swaps needed is n - number of cycles, where cycles are the cycles in the directed graph where each edge is i -> a[i].
 
