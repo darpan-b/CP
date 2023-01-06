@@ -33,6 +33,6 @@ int main() {
     cin.tie(nullptr);
     int test;
     cin >> test;
-    while(test--) solve();
+    while (test--) solve();
     return 0;
 }
