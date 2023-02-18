@@ -1,27 +1,22 @@
-template <typename T>
-class SegmentTree
-{
-public:
+template<typename T>
+struct SegmentTree{
     vector<T> seg;
 
-    SegmentTree() = default;
+    SegmentTree(){};
 
-    SegmentTree(int n)
-    {
+    SegmentTree(int n){
         seg.assign(4 * n, 0);
     }
 
-    inline T combine(const T &lhs, const T &rhs)
-    {
+    inline T combine(const T &lhs, const T &rhs){
         return lhs + rhs;
     }
 
-    void build(int node, int ss, int se, const vector<T> &a)
-    {
-        if (ss > se)
+    void build(int node, int ss, int se, const vector<T> &a){
+        if (ss > se){
             return;
-        if (ss == se)
-        {
+        }
+        if (ss == se){
             seg[node] = a[ss];
             return;
         }
@@ -31,12 +26,11 @@ public:
         seg[node] = combine(seg[node * 2 + 1], seg[node * 2 + 2]);
     }
 
-    void update(int node, int ss, int se, int uidx, const T &val)
-    {
-        if (ss > se || uidx > se || uidx < ss)
+    void update(int node, int ss, int se, int uidx, const T &val){
+        if (ss > se || uidx > se || uidx < ss){
             return;
-        if (ss == se && ss == uidx)
-        {
+        }
+        if (ss == se && ss == uidx){
             seg[node] = val;
             return;
         }
@@ -46,12 +40,13 @@ public:
         seg[node] = combine(seg[node * 2 + 1], seg[node * 2 + 2]);
     }
 
-    T query(int node, int ss, int se, int qs, int qe)
-    {
-        if (ss > se || qs > se || qe < ss)
+    T query(int node, int ss, int se, int qs, int qe){
+        if (ss > se || qs > se || qe < ss){
             return 0LL;
-        if (ss >= qs && se <= qe)
+        }
+        if (ss >= qs && se <= qe){
             return seg[node];
+        }
         int mid = (ss + se) / 2;
         T leftQuery = query(node * 2 + 1, ss, mid, qs, qe);
         T rightQuery = query(node * 2 + 2, mid + 1, se, qs, qe);
