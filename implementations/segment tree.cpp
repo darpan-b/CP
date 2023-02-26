@@ -12,11 +12,11 @@ struct SegmentTree{
         return lhs + rhs;
     }
 
-    void build(int node, int ss, int se, const vector<T> &a){
-        if (ss > se){
+    void build(int node, int ss, int se, const vector<T>& a){
+        if(ss > se){
             return;
         }
-        if (ss == se){
+        if(ss == se){
             seg[node] = a[ss];
             return;
         }
@@ -26,11 +26,11 @@ struct SegmentTree{
         seg[node] = combine(seg[node * 2 + 1], seg[node * 2 + 2]);
     }
 
-    void update(int node, int ss, int se, int uidx, const T &val){
-        if (ss > se || uidx > se || uidx < ss){
+    void update(int node, int ss, int se, int uidx, const T& val){
+        if(ss > se || uidx > se || uidx < ss){
             return;
         }
-        if (ss == se && ss == uidx){
+        if(ss == se && ss == uidx){
             seg[node] = val;
             return;
         }
@@ -41,10 +41,10 @@ struct SegmentTree{
     }
 
     T query(int node, int ss, int se, int qs, int qe){
-        if (ss > se || qs > se || qe < ss){
+        if(ss > se || qs > se || qe < ss){
             return 0LL;
         }
-        if (ss >= qs && se <= qe){
+        if(ss >= qs && se <= qe){
             return seg[node];
         }
         int mid = (ss + se) / 2;
