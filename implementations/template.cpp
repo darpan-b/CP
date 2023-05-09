@@ -1,23 +1,28 @@
 #include <bits/stdc++.h>
-using namespace std;
 #ifdef LOCAL
-#include "debugger.h"
+    #include "debugger.h"
 #else
-#define dbg(...) 5
+    #define dbg(...) 5
 #endif
 
-#define ll long long
+using namespace std;
+using ll = long long;
+using ld = long double;
 
-void solve(){
+#define rep(i, a, b) for (auto i = (a); i < (b); i++)
+#define per(i, a, b) for (auto i = (a); i >= (b); i--)
+#define sz(x) static_cast<int>((x).size())
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+
+void solve() {
+    
 }
 
-int main(){
-    ios_base::sync_with_stdio(false);
+int main() {
+    ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int test;
-    cin >> test;
-    while(test--){
-        solve();
-    }
+    int test; cin >> test;
+    while (test--) solve();
     return 0;
 }
