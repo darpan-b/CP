@@ -2,3 +2,9 @@ dsu.cpp
 --------
 Link: https://codeforces.com/contest/1927/submission/245548983
 Tested on: 09.02.2024 10:38 IST
+
+math.cpp
+--------
+Link: https://codeforces.com/contest/1931/submission/246806228
+Tested on: 17.02.2024 18:09 IST
+
